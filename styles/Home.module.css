@@ -1,0 +1,34 @@
+.container {
+  width: 100%;
+  max-width: 90vw;
+  margin: 0 auto;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.875em;
+
+  height: 100vh;
+  justify-content: center;
+}
+
+.form .passwordInput,
+.form .characterNumberOption,
+.form .options,
+.form button {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.options .option {
+  display: flex;
+  gap: 0.5em;
+}
