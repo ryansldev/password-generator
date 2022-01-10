@@ -1,0 +1,25 @@
+.passwordStrengthMeter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-bottom: 1.5em;
+}
+
+.passwordStrengthMeter .progressBar {
+  width: 100%;
+  max-width: 500px;
+  height: 10px;
+  background: var(--input-background);
+  border-radius: .5vw;
+}
+
+.passwordStrengthMeter .progressBar .progress {
+  background: var(--blue-500);
+  height: 100%;
+  border-radius: .5vw;
+}
+
+.passwordStrengthMeter label {
+  color: var(--gray-800);
+}

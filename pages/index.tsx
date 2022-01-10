@@ -6,6 +6,7 @@ import styles from '../styles/Home.module.css'
 
 import { FiMoon, FiSun } from 'react-icons/fi';
 import PasswordToClipboard from './components/PasswordToClipboard';
+import PasswordStrengthMeter from './components/PasswordStrengthMeter';
 
 const Home: NextPage = () => {
   const [darkMode, setDarkMode] = useState(false);
@@ -24,6 +25,11 @@ const Home: NextPage = () => {
     let alphabetLowercasePosition;
     let alphabetUppercasePosition;
     let symbolsPosition;
+
+    if(!includeLowercase && !includeUppercase && !includeSymbols && !includeNumbers) {
+      alert('You need to put something option to generate a password');
+      return;
+    }
 
     if(includeLowercase || includeUppercase) {
       const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
@@ -108,6 +114,7 @@ const Home: NextPage = () => {
               id="passwordInput"
             />
             <PasswordToClipboard password={password} />
+            <PasswordStrengthMeter password={password} />
             <div className={styles.options}>
               <label>
                 Character number
