@@ -60,6 +60,7 @@
   --text-color: #e8e8e8;
   --input-background: #3a3a3a;
   --input-border-color: #595959;
+  --input-color: #e8e8e8;
   --button-background: #3a3a3a;
   --button-color: #e8e8e8;
 }
@@ -95,6 +96,7 @@ input {
   
   font-size: 1rem;
   background: var(--input-background);
+  color: var(--input-color);
 }
 
 button {
