@@ -5,6 +5,7 @@ import { FormEvent, useEffect, useState } from 'react'
 import styles from '../styles/Home.module.css'
 
 import { FiMoon, FiSun } from 'react-icons/fi';
+import PasswordToClipboard from './components/PasswordToClipboard';
 
 const Home: NextPage = () => {
   const [darkMode, setDarkMode] = useState(false);
@@ -106,6 +107,7 @@ const Home: NextPage = () => {
               value={password}
               id="passwordInput"
             />
+            <PasswordToClipboard password={password} />
             <div className={styles.options}>
               <label>
                 Character number
