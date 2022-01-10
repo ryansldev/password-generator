@@ -13,6 +13,11 @@
   justify-content: center;
 }
 
+.form button {
+  background: var(--blue-500);
+  color: #fff;
+}
+
 .form .passwordInput,
 .form .characterNumberOption,
 .form .options,
