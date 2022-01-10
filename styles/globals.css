@@ -27,6 +27,8 @@
   --text-color: #1a1a1a;
   --input-background: #f9f9f9;
   --input-border-color: #d8d8d8;
+  --button-background: #EFEFEF;
+  --button-color: #1a1a1a;
 }
 
 .dark-mode:root {
@@ -58,6 +60,8 @@
   --text-color: #e8e8e8;
   --input-background: #3a3a3a;
   --input-border-color: #595959;
+  --button-background: #3a3a3a;
+  --button-color: #e8e8e8;
 }
 
 html,
@@ -106,4 +110,7 @@ button {
   transition: .3s;
   border: 0;
   cursor: pointer;
+
+  background: var(--button-background);
+  color: var(--button-color);
 }
