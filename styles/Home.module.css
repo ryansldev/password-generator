@@ -4,6 +4,14 @@
   margin: 0 auto;
 }
 
+.viewMode {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  border-radius: 0;
+  background: transparent;
+}
+
 .form {
   display: flex;
   flex-direction: column;

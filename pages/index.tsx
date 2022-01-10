@@ -1,13 +1,27 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
-import { FormEvent } from 'react'
+import { FormEvent, useEffect, useState } from 'react'
 import styles from '../styles/Home.module.css'
 
+import { FiMoon, FiSun } from 'react-icons/fi';
+
 const Home: NextPage = () => {
+  const [darkMode, setDarkMode] = useState(false);
+  
   function handleSubmit(e: FormEvent) {
     e?.preventDefault();
   }
+  
+  useEffect(() => {
+    const html = document.querySelector('html');
+    if(darkMode) {
+      html?.classList.add('dark-mode');
+      return;
+    }
+
+    html?.classList.remove('dark-mode');
+  }, [darkMode]);
 
   return (
     <div>
@@ -43,6 +57,10 @@ const Home: NextPage = () => {
               Generate
             </button>
           </form>
+          <button className={styles.viewMode} onClick={() => setDarkMode(!darkMode ? true : false)}>
+            { !darkMode ? <FiMoon size={24} /> : <FiSun size={24} /> }
+            { !darkMode ? 'Dark Mode' : 'Light mode' }
+          </button>
         </div>
       </main>
 
