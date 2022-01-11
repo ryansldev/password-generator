@@ -12,7 +12,7 @@ type ResultProps = {
 }
 
 function PasswordStrengthMeter({ password }: PasswordStrengthMeterProps) {
-  const testedResult = zxcvbn(password);
+  const testedResult = password !== undefined ? zxcvbn(password) : { score: 0 };
   const createPasswordLabel = (result: ResultProps) => {
     switch (result.score) {
       case 0:
@@ -39,7 +39,7 @@ function PasswordStrengthMeter({ password }: PasswordStrengthMeterProps) {
   return (
     <div className={styles.passwordStrengthMeter}>
       <div className={styles.progressBar}>
-        <div className={styles.progress} style={{ width: `${testedResult.score * 25}`}} id="progress"></div>
+        <div className={styles.progress} style={{ width: `${testedResult?.score * 25}`}} id="progress"></div>
       </div>
       <label
         className={styles.passwordStrengthMeterLabel}
